@@ -20,3 +20,27 @@ box-shadow:0 0 20px rgba(0,0,0,0.3);
 width:420px;
 text-align:center;
 }
+
+input{
+width:100%;
+padding:14px;
+margin:10px 0;
+border-radius:8px;
+border:1px solid #ccc;
+font-size:16px;
+}
+
+button{
+width:100%;
+padding:14px;
+background:#0077ff;
+color:white;
+border:none;
+border-radius:8px;
+font-size:16px;
+cursor:pointer;
+}
+
+button:hover{
+background:#0055cc;
+}
