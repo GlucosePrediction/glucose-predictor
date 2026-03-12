@@ -37,6 +37,17 @@
 
 <h3>Predicted Glucose Level: {{prediction}} mg/dL</h3>
 
+{% if prediction < 140 %}
+<p style="color:green;font-weight:bold;">Status: NORMAL</p>
+
+{% elif prediction < 180 %}
+<p style="color:orange;font-weight:bold;">Status: HIGH</p>
+
+{% else %}
+<p style="color:red;font-weight:bold;">Status: DANGEROUS</p>
+
+{% endif %}
+
 <div id="gauge_chart" style="width:300px;height:200px;margin:auto;"></div>
 
 </div>
