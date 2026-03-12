@@ -6,7 +6,7 @@
 <title>Glucose Prediction</title>
 
 <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-
+<script src="https://www.gstatic.com/charts/loader.js"></script>
 </head>
 
 <body>
@@ -35,11 +35,45 @@
 
 <div class="result">
 
-<h2>Predicted Glucose Level</h2>
+<h3>Predicted Glucose Level: {{prediction}} mg/dL</h3>
 
-<h3>{{prediction}} mg/dL</h3>
+<div id="gauge_chart" style="width:300px;height:200px;margin:auto;"></div>
 
 </div>
+
+<script>
+
+google.charts.load('current', {'packages':['gauge']});
+google.charts.setOnLoadCallback(drawGauge);
+
+function drawGauge(){
+
+var data = google.visualization.arrayToDataTable([
+['Label','Value'],
+['Glucose', {{prediction}}]
+]);
+
+var options = {
+width:300,
+height:200,
+greenFrom:70,
+greenTo:140,
+yellowFrom:140,
+yellowTo:180,
+redFrom:180,
+redTo:250,
+min:50,
+max:250,
+minorTicks:5
+};
+
+var chart = new google.visualization.Gauge(document.getElementById('gauge_chart'));
+
+chart.draw(data, options);
+
+}
+
+</script>
 
 {% endif %}
 
