@@ -44,3 +44,25 @@ cursor:pointer;
 button:hover{
 background:#0055cc;
 }
+#gauge_chart{
+display:flex;
+justify-content:center;
+margin:20px auto;
+}
+
+table{
+width:100%;
+margin-top:20px;
+border-collapse:collapse;
+text-align:center;
+}
+
+th, td{
+border:1px solid #999;
+padding:10px;
+}
+
+th{
+background:#0077ff;
+color:white;
+}
