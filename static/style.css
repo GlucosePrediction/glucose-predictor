@@ -75,5 +75,11 @@ text-align:center;
 #gauge_chart{
 display:flex;
 justify-content:center;
+align-items:center;
+width:100%;
 margin:20px auto;
+}
+
+#gauge_chart svg{
+margin:auto;
 }
